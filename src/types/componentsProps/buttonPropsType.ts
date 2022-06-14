@@ -1,5 +1,5 @@
 export type ButtonPropsType = {
-	onPress?: () => void;
-	text: string;
-	bgColor?: string;
+    onPress?: () => void;
+    text: string;
+    bgColor?: string;
 };
