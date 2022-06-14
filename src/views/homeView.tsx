@@ -1,6 +1,6 @@
 import { useState, VFC } from "react";
 import { View, StyleSheet, Text, SafeAreaView } from "react-native";
-import Button from "../components/btn/btn";
+import Button from "../components/button/button";
 
 const HomeView: VFC = () => {
 	const [count, setCount] = useState(0);
