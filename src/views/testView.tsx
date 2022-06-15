@@ -1,7 +1,7 @@
 import { VFC } from "react";
 import { Text } from "react-native";
 
-import { Box } from "../components/box/box";
+import { Box } from "../components/atom/box/box";
 
 const TestView: VFC = () => {
     return (

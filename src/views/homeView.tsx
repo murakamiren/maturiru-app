@@ -1,7 +1,7 @@
 import { useState, VFC } from "react";
 import { View, StyleSheet, Text, SafeAreaView } from "react-native";
 
-import { Box } from "../components/box/box";
+import { Box } from "../components/atom/box/box";
 import Button from "../components/button/button";
 
 const HomeView: VFC = () => {
