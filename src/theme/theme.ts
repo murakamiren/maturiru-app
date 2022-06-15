@@ -1,4 +1,5 @@
 import { createTheme } from "@shopify/restyle";
+
 import { palette } from "./palette";
 
 const theme = createTheme({

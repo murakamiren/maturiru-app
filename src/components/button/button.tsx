@@ -1,5 +1,6 @@
 import { VFC } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
 import { ButtonPropsType } from "../../types/componentsProps/buttonPropsType";
 
 const Button: VFC<ButtonPropsType> = ({ text, onPress, bgColor }) => {
