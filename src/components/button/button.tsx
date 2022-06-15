@@ -7,7 +7,7 @@ const Button: VFC<ButtonPropsType> = ({ text, onPress, bgColor }) => {
         button: {
             paddingVertical: 12,
             paddingHorizontal: 24,
-            backgroundColor: bgColor ? bgColor : "skyblue",
+            backgroundColor: bgColor ? bgColor : "#F13A00",
             borderRadius: 8
         },
         text: {
