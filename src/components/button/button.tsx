@@ -1,8 +1,7 @@
 import { VFC } from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { ButtonPropsType } from "../../types/componentsProps/buttonPropsType";
-import { Text } from "../atom/text/text";
 
 const Button: VFC<ButtonPropsType> = ({ text, onPress, bgColor }) => {
     const styles = StyleSheet.create({
@@ -17,7 +16,7 @@ const Button: VFC<ButtonPropsType> = ({ text, onPress, bgColor }) => {
     return (
         <View>
             <TouchableOpacity onPress={onPress} style={styles.button}>
-                <Text color="white">{text}</Text>
+                <Text>{text}</Text>
             </TouchableOpacity>
         </View>
     );

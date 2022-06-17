@@ -1,7 +1,6 @@
 import { useState, VFC } from "react";
 import { View, StyleSheet, Text, SafeAreaView } from "react-native";
 
-import { Box } from "../components/atom/box/box";
 import Button from "../components/button/button";
 
 const HomeView: VFC = () => {
@@ -17,13 +16,6 @@ const HomeView: VFC = () => {
                     onPress={() => {
                         setCount((pre) => pre + 1);
                     }}
-                />
-                <Box
-                    width={200}
-                    height={200}
-                    backgroundColor="primary"
-                    borderRadius={12}
-                    marginTop="xl"
                 />
             </View>
         </SafeAreaView>
