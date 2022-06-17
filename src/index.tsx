@@ -29,7 +29,7 @@ const Index: VFC = () => {
                             <SearchIcon
                                 width={tabBarIconSize}
                                 height={tabBarIconSize}
-                                stroke={
+                                fill={
                                     focused
                                         ? themeColors.primaryColor
                                         : themeColors.black
