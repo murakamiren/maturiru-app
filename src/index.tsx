@@ -50,7 +50,7 @@ const Index: VFC = () => {
                             <TimelineIcon
                                 width={tabBarIconSize}
                                 height={tabBarIconSize}
-                                stroke={
+                                fill={
                                     focused
                                         ? themeColors.primaryColor
                                         : themeColors.black
