@@ -16,7 +16,7 @@ const TabNavigationGroup = () => {
                     name={route.routeParam}
                     component={route.component}
                     options={{
-                        title: "aaaa",
+                        title: route.title,
                         tabBarLabel: () => (
                             <Text style={styles.navText}>{route.title}</Text>
                         ),
