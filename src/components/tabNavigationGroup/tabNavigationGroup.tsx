@@ -1,18 +1,48 @@
-import HomeView from "../../views/homeView";
-import NavigationTabScreen from "../navigationTabScreen/navigationTabScreen";
-import SearchIcon from "./assets/svg/searchIcon.svg";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { StyleSheet, Text } from "react-native";
+
+import { tabRoutes } from "../../constants/route";
+import { tabBarIconSize, themeColors } from "../../constants/styles";
+import { RootTabParamList } from "../../types/navigation/navigationType";
+
+const Tab = createBottomTabNavigator<RootTabParamList>();
 
 const TabNavigationGroup = () => {
     return (
-        <>
-            <NavigationTabScreen
-                title="検索"
-                label="検索"
-                component={HomeView}
-                Icon={SearchIcon}
-            />
-        </>
+        <Tab.Navigator screenOptions={{ tabBarStyle: { height: 82 } }}>
+            {tabRoutes.map((route) => (
+                <Tab.Screen
+                    key={route.title}
+                    name={route.routeParam}
+                    component={route.component}
+                    options={{
+                        title: "aaaa",
+                        tabBarLabel: () => (
+                            <Text style={styles.navText}>{route.title}</Text>
+                        ),
+                        tabBarIcon: ({ focused }) => (
+                            <route.Icon
+                                width={tabBarIconSize}
+                                height={tabBarIconSize}
+                                fill={
+                                    focused
+                                        ? themeColors.primaryColor
+                                        : themeColors.black
+                                }
+                            />
+                        )
+                    }}
+                />
+            ))}
+        </Tab.Navigator>
     );
 };
+
+const styles = StyleSheet.create({
+    navText: {
+        fontSize: 8,
+        color: themeColors.black
+    }
+});
 
 export default TabNavigationGroup;
