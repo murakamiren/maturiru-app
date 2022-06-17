@@ -19,7 +19,13 @@ module.exports = {
         },
         project: "./tsconfig.json"
     },
-    plugins: ["react", "react-hooks", "@typescript-eslint", "import"],
+    plugins: [
+        "react",
+        "react-hooks",
+        "@typescript-eslint",
+        "import",
+        "unused-imports"
+    ],
     rules: {
         indent: ["error", 4],
         "linebreak-style": ["error", "unix"],
@@ -45,6 +51,8 @@ module.exports = {
                     caseInsensitive: true // 小文字大文字を区別する
                 }
             }
-        ]
+        ],
+        "unused-imports/no-unused-imports": "warn",
+        "@typescript-eslint/no-unused-vars": "off"
     }
 };
