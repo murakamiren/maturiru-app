@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { StyleSheet, Text } from "react-native";
+import { Text } from "react-native";
 
 import { tabRoutes } from "../../constants/route";
 import { tabBarIconSize, themeColors } from "../../constants/styles";
@@ -17,8 +17,17 @@ const TabNavigationGroup = () => {
                     component={route.component}
                     options={{
                         title: route.title,
-                        tabBarLabel: () => (
-                            <Text style={styles.navText}>{route.title}</Text>
+                        tabBarLabel: ({ focused }) => (
+                            <Text
+                                style={{
+                                    fontSize: 8,
+                                    color: focused
+                                        ? themeColors.primaryColor
+                                        : themeColors.black
+                                }}
+                            >
+                                {route.title}
+                            </Text>
                         ),
                         tabBarIcon: ({ focused }) => (
                             <route.Icon
@@ -37,12 +46,5 @@ const TabNavigationGroup = () => {
         </Tab.Navigator>
     );
 };
-
-const styles = StyleSheet.create({
-    navText: {
-        fontSize: 8,
-        color: themeColors.black
-    }
-});
 
 export default TabNavigationGroup;
