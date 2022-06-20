@@ -1,6 +1,9 @@
 export const tabBarIconSize = 20;
 
-export const avatarSize = 50;
+export const avatarSize = {
+    base: 50,
+    large: 76
+};
 
 export const themeColors = {
     primaryColor: "#F13A00",

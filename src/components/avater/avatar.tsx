@@ -2,14 +2,15 @@ import { VFC } from "react";
 import { StyleSheet, View } from "react-native";
 
 import { avatarSize, themeColors } from "../../constants/styles";
+import { AvatarProps } from "../../types/componentsProps/avatarPropsType";
 
-const Avatar: VFC = () => {
+const Avatar: VFC<AvatarProps> = ({ size }) => {
     const styles = StyleSheet.create({
         avatar: {
-            width: avatarSize,
-            height: avatarSize,
+            width: avatarSize[size],
+            height: avatarSize[size],
             backgroundColor: themeColors.lightGray,
-            borderRadius: avatarSize
+            borderRadius: avatarSize[size]
         }
     });
 
