@@ -1,5 +1,7 @@
 export const tabBarIconSize = 20;
 
+export const notificationCircleSize = 20;
+
 export const avatarSize = {
     base: 50,
     large: 76
@@ -11,5 +13,6 @@ export const themeColors = {
     black: "#0B0B0B",
     white: "#FBFBFB",
     gray: "#979797",
-    lightGray: "#D9D9D9"
+    lightGray: "#D9D9D9",
+    red: "#F13A00"
 };
