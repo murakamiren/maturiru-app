@@ -14,11 +14,11 @@ const Button: VFC<ButtonPropsType> = ({ text, onPress, bgColor }) => {
     });
 
     return (
-        <View>
-            <TouchableOpacity onPress={onPress} style={styles.button}>
+        <TouchableOpacity onPress={onPress}>
+            <View style={styles.button}>
                 <Text>{text}</Text>
-            </TouchableOpacity>
-        </View>
+            </View>
+        </TouchableOpacity>
     );
 };
 
