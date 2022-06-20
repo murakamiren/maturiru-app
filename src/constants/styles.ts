@@ -2,6 +2,8 @@ export const tabBarIconSize = 20;
 
 export const notificationCircleSize = 20;
 
+export const chatCardHeight = 50;
+
 export const avatarSize = {
     base: 50,
     large: 76

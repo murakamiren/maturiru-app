@@ -1,6 +1,6 @@
 export type chatCardProps = {
     name: string;
     latestMsg: string;
-    time: number;
+    time: string;
     notification: number;
 };
