@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 import { chatCardHeight, themeColors } from "../../constants/styles";
 import { chatCardProps } from "../../types/componentsProps/chatCardPropsType";
-import Avatar from "../avater/avatar";
+import Avatar from "../avatar/avatar";
 import NotificationCircle from "../notificationCircle/notificationCircle";
 
 const ChatCard: VFC<chatCardProps> = ({
