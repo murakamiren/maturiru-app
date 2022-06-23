@@ -9,13 +9,15 @@ const Stack = createNativeStackNavigator<HomeStackParamList>();
 
 const HomeStack: VFC = () => {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator
+            screenOptions={{
+                headerStyle: { backgroundColor: themeColors.white }
+            }}
+        >
             <Stack.Screen
                 name="homeView"
                 component={HomeView}
-                options={{
-                    headerStyle: { backgroundColor: themeColors.white }
-                }}
+                options={{ title: "ホーム" }}
             />
         </Stack.Navigator>
     );
