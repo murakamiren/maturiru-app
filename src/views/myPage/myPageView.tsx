@@ -1,9 +1,9 @@
 import { VFC } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-import Avatar from "../components/avatar/avatar";
-import Button from "../components/button/button";
-import { themeColors } from "../constants/styles";
+import Avatar from "../../components/avatar/avatar";
+import Button from "../../components/button/button";
+import { themeColors } from "../../constants/styles";
 
 const MyPageView: VFC = () => {
     return (

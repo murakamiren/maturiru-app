@@ -2,9 +2,9 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { VFC } from "react";
 import { StyleSheet, View } from "react-native";
 
-import ChatCard from "../components/chatCard/chatCard";
-import { themeColors } from "../constants/styles";
-import { ChatStackParamList } from "../types/navigation/navigationType";
+import ChatCard from "../../components/chatCard/chatCard";
+import { themeColors } from "../../constants/styles";
+import { ChatStackParamList } from "../../types/navigation/navigationType";
 
 type NavigateProps = NativeStackScreenProps<ChatStackParamList, "chatView">;
 

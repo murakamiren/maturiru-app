@@ -1,8 +1,8 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { VFC } from "react";
 
-import { themeColors } from "../constants/styles";
-import { ChatStackParamList } from "../types/navigation/navigationType";
+import { themeColors } from "../../constants/styles";
+import { ChatStackParamList } from "../../types/navigation/navigationType";
 import ChatDetail from "./chatDetail";
 import ChatView from "./chatView";
 

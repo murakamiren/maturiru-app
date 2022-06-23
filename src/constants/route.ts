@@ -4,9 +4,9 @@ import MyPageIcon from "../assets/svg/myPageIcon.svg";
 import SearchIcon from "../assets/svg/searchIcon.svg";
 import TimelineIcon from "../assets/svg/timelineIcon.svg";
 import { RouteType } from "../types/navigation/routeType";
-import ChatStack from "../views/chatStack";
+import ChatStack from "../views/chat/chatStack";
 import HomeView from "../views/homeView";
-import MyPageStack from "../views/myPageStack";
+import MyPageStack from "../views/myPage/myPageStack";
 import TestView from "../views/testView";
 
 const searchRoute: RouteType = {
