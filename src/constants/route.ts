@@ -6,7 +6,7 @@ import TimelineIcon from "../assets/svg/timelineIcon.svg";
 import { RouteType } from "../types/navigation/routeType";
 import ChatStack from "../views/chat/chatStack";
 import HomeStack from "../views/home/homeStack";
-import HomeView from "../views/homeView";
+import HomeView from "../views/home/homeView";
 import MyPageStack from "../views/myPage/myPageStack";
 import TestView from "../views/testView";
 

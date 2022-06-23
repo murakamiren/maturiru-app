@@ -3,7 +3,7 @@ import { VFC } from "react";
 
 import { themeColors } from "../../constants/styles";
 import { HomeStackParamList } from "../../types/navigation/navigationType";
-import HomeView from "../homeView";
+import HomeView from "./homeView";
 
 const Stack = createNativeStackNavigator<HomeStackParamList>();
 

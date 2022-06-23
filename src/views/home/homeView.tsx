@@ -1,7 +1,8 @@
 import { useState, VFC } from "react";
 import { View, StyleSheet, Text, SafeAreaView } from "react-native";
 
-import Button from "../components/button/button";
+import Button from "../../components/button/button";
+import { themeColors } from "../../constants/styles";
 
 const HomeView: VFC = () => {
     const [count, setCount] = useState(0);
@@ -13,6 +14,7 @@ const HomeView: VFC = () => {
                 <Text>count: {count}</Text>
                 <Button
                     text="hello btn"
+                    color={themeColors.white}
                     onPress={() => {
                         setCount((pre) => pre + 1);
                     }}
@@ -25,7 +27,7 @@ const HomeView: VFC = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fff",
+        backgroundColor: themeColors.white,
         alignItems: "center",
         justifyContent: "center"
     }
