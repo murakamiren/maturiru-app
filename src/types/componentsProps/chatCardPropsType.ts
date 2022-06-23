@@ -3,4 +3,5 @@ export type chatCardProps = {
     latestMsg: string;
     time: string;
     notification: number;
+    onPress?: () => void;
 };

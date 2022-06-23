@@ -1,5 +1,5 @@
 import { VFC } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { chatCardHeight, themeColors } from "../../constants/styles";
 import { chatCardProps } from "../../types/componentsProps/chatCardPropsType";
@@ -10,7 +10,8 @@ const ChatCard: VFC<chatCardProps> = ({
     name,
     latestMsg,
     time,
-    notification
+    notification,
+    onPress
 }) => {
     const styles = StyleSheet.create({
         box: {
@@ -45,23 +46,25 @@ const ChatCard: VFC<chatCardProps> = ({
     });
 
     return (
-        <View style={styles.box}>
-            <Avatar size="base" />
-            <View style={styles.centerBox}>
-                <Text style={styles.name}>{name}</Text>
-                <Text
-                    style={styles.light}
-                    numberOfLines={1}
-                    ellipsizeMode="tail"
-                >
-                    {latestMsg}
-                </Text>
+        <TouchableOpacity onPress={onPress}>
+            <View style={styles.box}>
+                <Avatar size="base" />
+                <View style={styles.centerBox}>
+                    <Text style={styles.name}>{name}</Text>
+                    <Text
+                        style={styles.light}
+                        numberOfLines={1}
+                        ellipsizeMode="tail"
+                    >
+                        {latestMsg}
+                    </Text>
+                </View>
+                <View style={styles.rightBox}>
+                    <Text style={styles.light}>{time}</Text>
+                    <NotificationCircle count={notification} />
+                </View>
             </View>
-            <View style={styles.rightBox}>
-                <Text style={styles.light}>{time}</Text>
-                <NotificationCircle count={notification} />
-            </View>
-        </View>
+        </TouchableOpacity>
     );
 };
 

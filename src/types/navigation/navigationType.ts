@@ -5,3 +5,8 @@ export type RootTabParamList = {
     chat: undefined;
     myPage: undefined;
 };
+
+export type ChatStackParamList = {
+    chatView: undefined;
+    chatDetail: { chatUser: string };
+};

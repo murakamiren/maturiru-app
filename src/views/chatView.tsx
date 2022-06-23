@@ -1,10 +1,14 @@
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { VFC } from "react";
 import { StyleSheet, View } from "react-native";
 
 import ChatCard from "../components/chatCard/chatCard";
 import { themeColors } from "../constants/styles";
+import { ChatStackParamList } from "../types/navigation/navigationType";
 
-const ChatView: VFC = () => {
+type NavigateProps = NativeStackScreenProps<ChatStackParamList, "chatView">;
+
+const ChatView: VFC<NavigateProps> = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <ChatCard
@@ -12,6 +16,9 @@ const ChatView: VFC = () => {
                 latestMsg="テストですテストですテストですテストですテストですテストです"
                 time="12:00"
                 notification={1}
+                onPress={() =>
+                    navigation.navigate("chatDetail", { chatUser: "test" })
+                }
             />
             <ChatCard
                 name="test"
