@@ -16,7 +16,7 @@ const TabNavigationGroup = () => {
                     name={route.routeParam}
                     component={route.component}
                     options={{
-                        title: route.title,
+                        headerShown: false,
                         tabBarLabel: ({ focused }) => (
                             <Text
                                 style={{

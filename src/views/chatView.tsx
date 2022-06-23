@@ -21,10 +21,15 @@ const ChatView: VFC<NavigateProps> = ({ navigation }) => {
                 }
             />
             <ChatCard
-                name="test"
+                name="テストユーザー"
                 latestMsg="テストですテストですテストですテストですテストですテストです"
                 time="12:00"
-                notification={1}
+                notification={2}
+                onPress={() =>
+                    navigation.navigate("chatDetail", {
+                        chatUser: "テストユーザー"
+                    })
+                }
             />
         </View>
     );

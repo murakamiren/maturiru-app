@@ -11,10 +11,18 @@ const ChatStack: VFC = () => {
     return (
         <Stack.Navigator
             initialRouteName="chatView"
-            screenOptions={{ headerShown: false }}
+            screenOptions={{ headerShown: true }}
         >
-            <Stack.Screen name="chatView" component={ChatView} />
-            <Stack.Screen name="chatDetail" component={ChatDetail} />
+            <Stack.Screen
+                name="chatView"
+                component={ChatView}
+                options={{ title: "チャット" }}
+            />
+            <Stack.Screen
+                name="chatDetail"
+                component={ChatDetail}
+                options={({ route }) => ({ title: route.params.chatUser })}
+            />
         </Stack.Navigator>
     );
 };
