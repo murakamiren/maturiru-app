@@ -4,6 +4,7 @@ import MyPageIcon from "../assets/svg/myPageIcon.svg";
 import SearchIcon from "../assets/svg/searchIcon.svg";
 import TimelineIcon from "../assets/svg/timelineIcon.svg";
 import { RouteType } from "../types/navigation/routeType";
+import ChatStack from "../views/chatStack";
 import HomeView from "../views/homeView";
 import TestView from "../views/testView";
 
@@ -31,7 +32,7 @@ const homeRoute: RouteType = {
 const chatRoute: RouteType = {
     routeParam: "chat",
     title: "チャット",
-    component: TestView,
+    component: ChatStack,
     Icon: ChatIcon
 };
 

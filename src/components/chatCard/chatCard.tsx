@@ -18,7 +18,8 @@ const ChatCard: VFC<chatCardProps> = ({
             height: chatCardHeight,
             paddingHorizontal: 16,
             flexDirection: "row",
-            alignItems: "center"
+            alignItems: "center",
+            marginTop: 16
         },
         centerBox: {
             marginHorizontal: 12,
