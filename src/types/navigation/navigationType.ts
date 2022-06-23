@@ -10,3 +10,7 @@ export type ChatStackParamList = {
     chatView: undefined;
     chatDetail: { chatUser: string };
 };
+
+export type MyPageStackParamList = {
+    MyPageView: undefined;
+};

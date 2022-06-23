@@ -6,6 +6,7 @@ import TimelineIcon from "../assets/svg/timelineIcon.svg";
 import { RouteType } from "../types/navigation/routeType";
 import ChatStack from "../views/chatStack";
 import HomeView from "../views/homeView";
+import MyPageStack from "../views/myPageStack";
 import TestView from "../views/testView";
 
 const searchRoute: RouteType = {
@@ -39,7 +40,7 @@ const chatRoute: RouteType = {
 const myPageRoute: RouteType = {
     routeParam: "myPage",
     title: "マイページ",
-    component: TestView,
+    component: MyPageStack,
     Icon: MyPageIcon
 };
 
