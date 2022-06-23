@@ -17,6 +17,9 @@ const TabNavigationGroup = () => {
                     component={route.component}
                     options={{
                         headerShown: false,
+                        tabBarStyle: {
+                            backgroundColor: themeColors.white
+                        },
                         tabBarLabel: ({ focused }) => (
                             <Text
                                 style={{

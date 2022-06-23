@@ -5,6 +5,7 @@ import SearchIcon from "../assets/svg/searchIcon.svg";
 import TimelineIcon from "../assets/svg/timelineIcon.svg";
 import { RouteType } from "../types/navigation/routeType";
 import ChatStack from "../views/chat/chatStack";
+import HomeStack from "../views/home/homeStack";
 import HomeView from "../views/homeView";
 import MyPageStack from "../views/myPage/myPageStack";
 import TestView from "../views/testView";
@@ -26,7 +27,7 @@ const timelineRoute: RouteType = {
 const homeRoute: RouteType = {
     routeParam: "home",
     title: "ホーム",
-    component: TestView,
+    component: HomeStack,
     Icon: HomeIcon
 };
 

@@ -10,13 +10,13 @@ const Stack = createNativeStackNavigator<MyPageStackParamList>();
 const MyPageStack: VFC = () => {
     return (
         <Stack.Navigator
-            initialRouteName="MyPageView"
+            initialRouteName="myPageView"
             screenOptions={{
                 headerStyle: { backgroundColor: themeColors.white }
             }}
         >
             <Stack.Screen
-                name="MyPageView"
+                name="myPageView"
                 component={MyPageView}
                 options={{ title: "マイページ" }}
             />
