@@ -19,3 +19,7 @@ export type MyPageStackParamList = {
 export type HomeStackParamList = {
     homeView: undefined;
 };
+
+export type TimelineStackParamList = {
+    timelineView: undefined;
+};

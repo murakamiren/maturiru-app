@@ -8,7 +8,7 @@ import ChatStack from "../views/chat/chatStack";
 import HomeStack from "../views/home/homeStack";
 import HomeView from "../views/home/homeView";
 import MyPageStack from "../views/myPage/myPageStack";
-import TestView from "../views/testView";
+import TimelineStack from "../views/timeline/timelineStack";
 
 const searchRoute: RouteType = {
     routeParam: "search",
@@ -20,7 +20,7 @@ const searchRoute: RouteType = {
 const timelineRoute: RouteType = {
     routeParam: "timeline",
     title: "タイムライン",
-    component: TestView,
+    component: TimelineStack,
     Icon: TimelineIcon
 };
 
