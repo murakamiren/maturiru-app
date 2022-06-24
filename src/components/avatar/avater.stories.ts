@@ -23,3 +23,16 @@ export const Large: ComponentStoryObj<typeof Avatar> = {
         size: "large"
     }
 };
+
+export const LargeWithBadge: ComponentStoryObj<typeof Avatar> = {
+    args: {
+        size: "large",
+        isBadge: true
+    }
+};
+
+export const small: ComponentStoryObj<typeof Avatar> = {
+    args: {
+        size: "sm"
+    }
+};

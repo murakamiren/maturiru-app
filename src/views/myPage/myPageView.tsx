@@ -1,6 +1,7 @@
 import { VFC } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
+import PulsIcon from "../../assets/svg/pulsIcon.svg";
 import Avatar from "../../components/avatar/avatar";
 import Button from "../../components/button/button";
 import { themeColors } from "../../constants/styles";
@@ -10,7 +11,7 @@ const MyPageView: VFC = () => {
         <View style={styles.container}>
             <View style={styles.profileTopWrap}>
                 <View>
-                    <Avatar size="large" />
+                    <Avatar size="large" isBadge={true} Icon={PulsIcon} />
                 </View>
                 <View style={styles.profileTopNameWrap}>
                     <Text style={styles.profileId}>@maturi_tarou</Text>

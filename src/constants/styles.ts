@@ -4,6 +4,8 @@ export const notificationCircleSize = 20;
 
 export const chatCardHeight = 50;
 
+export const badgeSize = 24;
+
 export const avatarSize = {
     sm: 30,
     base: 50,

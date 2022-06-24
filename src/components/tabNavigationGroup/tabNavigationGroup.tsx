@@ -9,7 +9,10 @@ const Tab = createBottomTabNavigator<RootTabParamList>();
 
 const TabNavigationGroup = () => {
     return (
-        <Tab.Navigator screenOptions={{ tabBarStyle: { height: 82 } }}>
+        <Tab.Navigator
+            initialRouteName="home"
+            screenOptions={{ tabBarStyle: { height: 82 } }}
+        >
             {tabRoutes.map((route) => (
                 <Tab.Screen
                     key={route.title}
