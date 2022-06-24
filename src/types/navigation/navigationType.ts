@@ -23,3 +23,7 @@ export type HomeStackParamList = {
 export type TimelineStackParamList = {
     timelineView: undefined;
 };
+
+export type SearchStackParamList = {
+    searchView: undefined;
+};

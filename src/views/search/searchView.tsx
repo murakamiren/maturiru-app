@@ -1,12 +1,12 @@
 import { VFC } from "react";
 import { Text, View } from "react-native";
 
-const TestView: VFC = () => {
+const SearchView: VFC = () => {
     return (
         <View>
-            <Text>Test</Text>
+            <Text>検索</Text>
         </View>
     );
 };
 
-export default TestView;
+export default SearchView;

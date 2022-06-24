@@ -6,14 +6,14 @@ import TimelineIcon from "../assets/svg/timelineIcon.svg";
 import { RouteType } from "../types/navigation/routeType";
 import ChatStack from "../views/chat/chatStack";
 import HomeStack from "../views/home/homeStack";
-import HomeView from "../views/home/homeView";
 import MyPageStack from "../views/myPage/myPageStack";
+import SearchStack from "../views/search/searchStack";
 import TimelineStack from "../views/timeline/timelineStack";
 
 const searchRoute: RouteType = {
     routeParam: "search",
     title: "検索",
-    component: HomeView,
+    component: SearchStack,
     Icon: SearchIcon
 };
 
