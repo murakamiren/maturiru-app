@@ -12,7 +12,9 @@ const MyPageStack: VFC = () => {
         <Stack.Navigator
             initialRouteName="myPageView"
             screenOptions={{
-                headerStyle: { backgroundColor: themeColors.white }
+                headerStyle: { backgroundColor: themeColors.white },
+                headerBackTitle: "",
+                headerTintColor: themeColors.black
             }}
         >
             <Stack.Screen

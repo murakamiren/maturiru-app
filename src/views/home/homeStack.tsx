@@ -11,7 +11,9 @@ const HomeStack: VFC = () => {
     return (
         <Stack.Navigator
             screenOptions={{
-                headerStyle: { backgroundColor: themeColors.white }
+                headerStyle: { backgroundColor: themeColors.white },
+                headerBackTitle: "",
+                headerTintColor: themeColors.black
             }}
         >
             <Stack.Screen
