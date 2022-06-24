@@ -1,10 +1,10 @@
 import { VFC } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 
 import { avatarSize, badgeSize, themeColors } from "../../constants/styles";
 import { AvatarProps } from "../../types/componentsProps/avatarPropsType";
 
-const Avatar: VFC<AvatarProps> = ({ size, isBadge, Icon }) => {
+const Avatar: VFC<AvatarProps> = ({ size, isBadge, Icon, onPress }) => {
     const styles = StyleSheet.create({
         avatar: {
             width: avatarSize[size],
@@ -29,9 +29,9 @@ const Avatar: VFC<AvatarProps> = ({ size, isBadge, Icon }) => {
     return (
         <View style={styles.avatar}>
             {isBadge && Icon && (
-                <View style={styles.badge}>
+                <TouchableOpacity onPress={onPress} style={styles.badge}>
                     <Icon fill={themeColors.white} />
-                </View>
+                </TouchableOpacity>
             )}
         </View>
     );

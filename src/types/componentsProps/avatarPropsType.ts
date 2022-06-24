@@ -5,4 +5,5 @@ export type AvatarProps = {
     size: "sm" | "base" | "large";
     isBadge?: boolean;
     Icon?: FC<SvgProps>;
+    onPress?: () => void;
 };

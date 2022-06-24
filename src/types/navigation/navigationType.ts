@@ -13,6 +13,7 @@ export type ChatStackParamList = {
 
 export type MyPageStackParamList = {
     myPageView: undefined;
+    myPageSetting: undefined;
 };
 
 export type HomeStackParamList = {
