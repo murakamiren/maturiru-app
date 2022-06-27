@@ -12,16 +12,19 @@ const HomeView: VFC = () => {
             <FestivalCard
                 space={2}
                 festivalName="テストまつり"
+                festivalRome="tesuto matsuri"
                 festivalImgUri="https://placehold.jp/3d4070/ffffff/300x150.png"
             />
             <FestivalCard
                 space={3}
                 festivalName="ああああああ"
+                festivalRome="aaaaaaa"
                 festivalImgUri="https://placehold.jp/3d4070/ffffff/300x150.png"
             />
             <FestivalCard
-                space={3}
-                festivalName="ああああああ"
+                space={1}
+                festivalName="藤江まつり"
+                festivalRome="hufie matsuri"
                 festivalImgUri="https://placehold.jp/3d4070/ffffff/300x150.png"
             />
         </ScrollView>

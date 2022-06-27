@@ -11,6 +11,7 @@ const stars: number[] = [1, 2, 3, 4];
 const FestivalCard: VFC<FestivalCardProps> = ({
     space,
     festivalName,
+    festivalRome,
     festivalImgUri,
     onPress
 }) => {
@@ -25,7 +26,7 @@ const FestivalCard: VFC<FestivalCardProps> = ({
             <View style={styles.festivalWrap}>
                 <View>
                     <Text style={styles.festivalTtl}>{festivalName}</Text>
-                    <Text style={styles.festivalSubTtl}>{festivalName}</Text>
+                    <Text style={styles.festivalSubTtl}>{festivalRome}</Text>
                     <View style={styles.festivalUnder}>
                         {stars.map((d) => (
                             <StarIcon
