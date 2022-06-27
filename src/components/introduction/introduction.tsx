@@ -7,6 +7,7 @@ import StarIcon from "../../assets/svg/starIcon.svg";
 import Avatar from "../../components/avatar/avatar";
 import Button from "../../components/button/button";
 import { themeColors } from "../../constants/styles";
+import IntroductionTtl from "../introductionTtl/introductionTtl";
 
 const starCount: number[] = [1, 2, 3, 4, 5];
 
@@ -14,7 +15,7 @@ type myPageProps = {
     age: number;
     license: string[];
     comment: string;
-    joinedFestival: string;
+    joinedFestival: string[];
     onPress?: () => void;
 };
 
@@ -65,10 +66,7 @@ const Introduction: VFC<myPageProps> = ({
                 <Text style={styles.verifiedText}>本人確認済み</Text>
                 <Image source={VerifiedIcon} style={styles.verified} />
             </View>
-            <View style={styles.introductionTop}>
-                <View style={styles.introductionCircle} />
-                <Text style={styles.introductionTtl}>自己紹介</Text>
-            </View>
+            <IntroductionTtl ttl="自己紹介" />
             <View style={styles.introductionTop}>
                 <Text style={styles.introductionTextLeft}>年齢</Text>
                 <Text style={styles.introductionTextRight}>{age}歳</Text>
@@ -77,7 +75,8 @@ const Introduction: VFC<myPageProps> = ({
                 style={{
                     flexDirection: "row",
                     alignItems: "flex-start",
-                    marginTop: 8
+                    marginTop: 8,
+                    marginBottom: 34
                 }}
             >
                 <Text style={styles.introductionTextLeft}>資格・免許</Text>
@@ -88,6 +87,20 @@ const Introduction: VFC<myPageProps> = ({
                         </Text>
                     ))}
                 </View>
+            </View>
+            <IntroductionTtl ttl="コメント" />
+            <Text style={{ marginTop: 8, marginBottom: 34 }}>{comment}</Text>
+            <IntroductionTtl ttl="今までに参加したお祭り" />
+            <View style={{ marginTop: 8, flexDirection: "row" }}>
+                {joinedFestival.map((n, i) => (
+                    <View
+                        key={i}
+                        style={{ marginRight: 24, alignItems: "center" }}
+                    >
+                        <Avatar size="base" />
+                        <Text style={{ fontSize: 10, marginTop: 8 }}>{n}</Text>
+                    </View>
+                ))}
             </View>
         </View>
     );
@@ -143,17 +156,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         marginTop: 8
-    },
-    introductionCircle: {
-        width: 14,
-        height: 14,
-        backgroundColor: themeColors.gray,
-        borderRadius: 14,
-        marginRight: 8
-    },
-    introductionTtl: {
-        fontSize: 14,
-        color: themeColors.primaryColor
     },
     introductionTextLeft: {
         fontWeight: "700",

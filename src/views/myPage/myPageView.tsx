@@ -8,13 +8,15 @@ type NavigateProps = NativeStackScreenProps<MyPageStackParamList, "myPageView">;
 
 const lArr = ["普通自動車免許", "英検二級", "調理師免許"];
 
+const mArr = ["テストまつり", "ああああまつり"];
+
 const MyPageView: VFC<NavigateProps> = ({ navigation }) => {
     return (
         <Introduction
             age={19}
             license={lArr}
             comment="ああああああああああああ"
-            joinedFestival="テストまつり"
+            joinedFestival={mArr}
             onPress={() => navigation.navigate("myPageSetting")}
         />
     );
