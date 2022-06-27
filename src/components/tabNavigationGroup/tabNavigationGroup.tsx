@@ -2,7 +2,11 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Text } from "react-native";
 
 import { tabRoutes } from "../../constants/route";
-import { tabBarIconSize, themeColors } from "../../constants/styles";
+import {
+    tabBarHeight,
+    tabBarIconSize,
+    themeColors
+} from "../../constants/styles";
 import { RootTabParamList } from "../../types/navigation/navigationType";
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
@@ -11,7 +15,7 @@ const TabNavigationGroup = () => {
     return (
         <Tab.Navigator
             initialRouteName="home"
-            screenOptions={{ tabBarStyle: { height: 82 } }}
+            screenOptions={{ tabBarStyle: { height: tabBarHeight } }}
         >
             {tabRoutes.map((route) => (
                 <Tab.Screen
