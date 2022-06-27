@@ -26,3 +26,10 @@ export const themeColors = {
     starColor: "#FFDA1B",
     linkColor: "#108DEE"
 };
+
+export const shadowProp = {
+    shadowColor: themeColors.black,
+    shadowOffset: { width: -2, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3
+};

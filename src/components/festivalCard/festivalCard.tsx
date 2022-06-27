@@ -1,5 +1,5 @@
 import { VFC } from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import StarIcon from "../../assets/svg/starIcon.svg";
 import { themeColors } from "../../constants/styles";
@@ -11,7 +11,8 @@ const stars: number[] = [1, 2, 3, 4];
 const FestivalCard: VFC<FestivalCardProps> = ({
     space,
     festivalName,
-    festivalImgUri
+    festivalImgUri,
+    onPress
 }) => {
     return (
         <View style={styles.container}>
@@ -41,9 +42,11 @@ const FestivalCard: VFC<FestivalCardProps> = ({
                     <Avatar size="sx" />
                 </View>
             </View>
-            <View>
-                <Text>詳細を見る</Text>
-            </View>
+            <TouchableOpacity onPress={onPress}>
+                <View style={styles.detailWrap}>
+                    <Text style={styles.detailText}>詳細を見る</Text>
+                </View>
+            </TouchableOpacity>
         </View>
     );
 };
@@ -51,7 +54,8 @@ const FestivalCard: VFC<FestivalCardProps> = ({
 const styles = StyleSheet.create({
     container: {
         marginHorizontal: 16,
-        borderRadius: 4
+        borderRadius: 4,
+        marginVertical: 24
     },
     title: {
         backgroundColor: themeColors.secondaryColor,
@@ -73,6 +77,7 @@ const styles = StyleSheet.create({
     },
     festivalWrap: {
         marginTop: 10,
+        marginBottom: 12,
         marginHorizontal: 14,
         flexDirection: "row",
         justifyContent: "space-between"
@@ -95,6 +100,17 @@ const styles = StyleSheet.create({
         fontSize: 10,
         color: themeColors.linkColor,
         marginLeft: 8
+    },
+    detailWrap: {
+        borderBottomRightRadius: 8,
+        borderBottomLeftRadius: 8,
+        alignItems: "center",
+        borderTopColor: themeColors.lightGray,
+        borderTopWidth: 1
+    },
+    detailText: {
+        marginVertical: 7,
+        fontSize: 16
     }
 });
 
