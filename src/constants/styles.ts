@@ -23,5 +23,6 @@ export const themeColors = {
     gray: "#979797",
     lightGray: "#D9D9D9",
     red: "#F13A00",
-    starColor: "#FFDA1B"
+    starColor: "#FFDA1B",
+    linkColor: "#108DEE"
 };
