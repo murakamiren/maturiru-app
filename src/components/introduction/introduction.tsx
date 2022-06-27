@@ -12,6 +12,8 @@ import IntroductionTtl from "../introductionTtl/introductionTtl";
 const starCount: number[] = [1, 2, 3, 4, 5];
 
 type myPageProps = {
+    name: string;
+    userId: string;
     age: number;
     license: string[];
     comment: string;
@@ -20,6 +22,8 @@ type myPageProps = {
 };
 
 const Introduction: VFC<myPageProps> = ({
+    name,
+    userId,
     age,
     license,
     comment,
@@ -38,8 +42,8 @@ const Introduction: VFC<myPageProps> = ({
                     />
                 </View>
                 <View style={styles.profileTopNameWrap}>
-                    <Text style={styles.profileId}>@maturi_tarou</Text>
-                    <Text style={styles.profileName}>まつり 好き太郎</Text>
+                    <Text style={styles.profileId}>@{userId}</Text>
+                    <Text style={styles.profileName}>{name}</Text>
                 </View>
             </View>
             <View style={styles.btn}>

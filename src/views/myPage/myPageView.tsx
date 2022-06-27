@@ -13,6 +13,8 @@ const mArr = ["テストまつり", "ああああまつり"];
 const MyPageView: VFC<NavigateProps> = ({ navigation }) => {
     return (
         <Introduction
+            name="まつり すき太郎"
+            userId="matsuri_tarou"
             age={19}
             license={lArr}
             comment="ああああああああああああ"
