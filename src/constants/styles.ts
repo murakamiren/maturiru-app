@@ -9,6 +9,7 @@ export const badgeSize = 24;
 export const tabBarHeight = 82;
 
 export const avatarSize = {
+    sx: 22,
     sm: 30,
     base: 50,
     large: 76
