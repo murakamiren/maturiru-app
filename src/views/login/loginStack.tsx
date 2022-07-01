@@ -26,7 +26,7 @@ const LoginStack: VFC = () => {
             <Stack.Screen
                 name="signUpView"
                 component={SignUpView}
-                options={{ headerShown: true }}
+                options={{ title: "会員登録" }}
             />
         </Stack.Navigator>
     );

@@ -14,7 +14,8 @@ const TopView: VFC<NavigateProps> = ({ navigation }) => {
             style={{
                 flex: 1,
                 justifyContent: "space-between",
-                marginBottom: 60
+                marginBottom: 60,
+                backgroundColor: themeColors.white
             }}
         >
             <View style={{ marginTop: 68, alignItems: "center" }}>
