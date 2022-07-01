@@ -17,7 +17,8 @@ const Button: VFC<ButtonPropsType> = ({
     isRound,
     isBgTransparent,
     isBorder,
-    borderColor
+    borderColor,
+    isMax
 }) => {
     const handleBgColor = (): ColorValue => {
         if (isBgTransparent) {
@@ -31,16 +32,18 @@ const Button: VFC<ButtonPropsType> = ({
 
     const styles = StyleSheet.create({
         container: {
-            alignSelf: "flex-start"
+            alignSelf: "flex-start",
+            width: isMax ? "100%" : "auto"
         },
         button: {
-            paddingVertical: 8,
+            paddingVertical: isMax ? 16 : 8,
             paddingHorizontal: 12,
             backgroundColor: handleBgColor(),
             borderRadius: isRound ? 9999 : 8,
             borderColor: borderColor,
             borderStyle: "solid",
-            borderWidth: isBorder ? 1 : 0
+            borderWidth: isBorder ? 1 : 0,
+            alignItems: "center"
         },
         text: {
             color

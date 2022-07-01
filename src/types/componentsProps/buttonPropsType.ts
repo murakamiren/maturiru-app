@@ -7,4 +7,5 @@ export type ButtonPropsType = {
     isBgTransparent?: boolean;
     isBorder?: boolean;
     borderColor?: string;
+    isMax?: boolean;
 };

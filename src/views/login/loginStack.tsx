@@ -17,7 +17,11 @@ const LoginStack: VFC = () => {
                 headerTintColor: themeColors.black
             }}
         >
-            <Stack.Screen name="topView" component={TopView} />
+            <Stack.Screen
+                name="topView"
+                component={TopView}
+                options={{ headerShown: false }}
+            />
         </Stack.Navigator>
     );
 };
