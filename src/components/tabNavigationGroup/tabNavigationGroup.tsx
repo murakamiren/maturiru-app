@@ -1,4 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { useAtom } from "jotai";
 import { Text } from "react-native";
 
 import { tabRoutes } from "../../constants/route";
@@ -7,11 +8,17 @@ import {
     tabBarIconSize,
     themeColors
 } from "../../constants/styles";
+import { isAuthAtom } from "../../store/atoms";
 import { RootTabParamList } from "../../types/navigation/navigationType";
+import LoginStack from "../../views/login/loginStack";
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
 const TabNavigationGroup = () => {
+    const [isAuth, setIsAuth] = useAtom(isAuthAtom);
+
+    if (!isAuth) return <LoginStack />;
+
     return (
         <Tab.Navigator
             initialRouteName="home"

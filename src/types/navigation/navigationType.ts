@@ -27,3 +27,7 @@ export type TimelineStackParamList = {
 export type SearchStackParamList = {
     searchView: undefined;
 };
+
+export type LoginStackParamList = {
+    topView: undefined;
+};
