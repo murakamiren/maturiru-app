@@ -3,6 +3,7 @@ import { VFC } from "react";
 
 import { themeColors } from "../../constants/styles";
 import { LoginStackParamList } from "../../types/navigation/navigationType";
+import SignUpView from "./signupView";
 import TopView from "./topView";
 
 const Stack = createNativeStackNavigator<LoginStackParamList>();
@@ -21,6 +22,11 @@ const LoginStack: VFC = () => {
                 name="topView"
                 component={TopView}
                 options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="signUpView"
+                component={SignUpView}
+                options={{ headerShown: true }}
             />
         </Stack.Navigator>
     );

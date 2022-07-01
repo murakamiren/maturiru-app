@@ -30,4 +30,5 @@ export type SearchStackParamList = {
 
 export type LoginStackParamList = {
     topView: undefined;
+    signUpView: undefined;
 };
