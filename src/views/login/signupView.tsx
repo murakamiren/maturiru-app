@@ -1,5 +1,5 @@
 import { VFC } from "react";
-import { Controller, useForm } from "react-hook-form";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 
 import Button from "../../components/button/button";
@@ -13,7 +13,7 @@ const SignUpView: VFC = () => {
         formState: { errors }
     } = useForm<SignUpFormInputType>();
 
-    const onSubmit = (data: SignUpFormInputType) => {
+    const onSubmit: SubmitHandler<SignUpFormInputType> = (data) => {
         console.log(data);
     };
 
@@ -22,13 +22,16 @@ const SignUpView: VFC = () => {
             <View style={styles.container}>
                 <View style={styles.formWrap}>
                     <Text style={styles.inputTopText}>名(漢字)</Text>
+                    {errors.firstNameJa && <Text>入力されていません</Text>}
                     <Controller
                         control={control}
                         rules={{ required: true }}
-                        render={({ field: { value } }) => (
+                        render={({ field: { value, onChange } }) => (
                             <TextInput
                                 value={value}
+                                onChangeText={onChange}
                                 style={styles.input}
+                                autoCapitalize="none"
                                 placeholder="ex: 田中"
                             />
                         )}
@@ -45,6 +48,7 @@ const SignUpView: VFC = () => {
                 customPaddingVertical={28}
                 fontSize={16}
                 fontWeight="bold"
+                onPress={handleSubmit(onSubmit)}
             />
         </View>
     );

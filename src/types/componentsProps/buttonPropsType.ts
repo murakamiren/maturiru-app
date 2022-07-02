@@ -1,7 +1,7 @@
 type fontWeightType = "normal" | "bold";
 
 export type ButtonPropsType = {
-    onPress?: () => void;
+    onPress?: () => void | Promise<void>;
     text: string;
     fontSize?: number;
     fontWeight?: fontWeightType;
