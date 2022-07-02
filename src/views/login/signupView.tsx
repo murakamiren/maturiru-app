@@ -1,12 +1,19 @@
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { useSetAtom } from "jotai";
 import { VFC } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 
 import Button from "../../components/button/button";
 import { themeColors } from "../../constants/styles";
+import { signUpFormInputAtom } from "../../store/atoms";
 import { SignUpFormInputType } from "../../types/form/signUpFormType";
+import { LoginStackParamList } from "../../types/navigation/navigationType";
 
-const SignUpView: VFC = () => {
+type NavigateProps = NativeStackScreenProps<LoginStackParamList, "signUpView">;
+
+const SignUpView: VFC<NavigateProps> = ({ navigation }) => {
+    const setSignUpFormInput = useSetAtom(signUpFormInputAtom);
     const {
         control,
         handleSubmit,
@@ -15,6 +22,8 @@ const SignUpView: VFC = () => {
 
     const onSubmit: SubmitHandler<SignUpFormInputType> = (data) => {
         console.log(data);
+        setSignUpFormInput(data);
+        navigation.navigate("signUpCheckView");
     };
 
     return (

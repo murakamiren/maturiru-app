@@ -3,6 +3,7 @@ import { VFC } from "react";
 
 import { themeColors } from "../../constants/styles";
 import { LoginStackParamList } from "../../types/navigation/navigationType";
+import SignUpCheckView from "./signUpCheckView";
 import SignUpView from "./signupView";
 import TopView from "./topView";
 
@@ -27,6 +28,11 @@ const LoginStack: VFC = () => {
                 name="signUpView"
                 component={SignUpView}
                 options={{ title: "会員登録" }}
+            />
+            <Stack.Screen
+                name="signUpCheckView"
+                component={SignUpCheckView}
+                options={{ title: "確認" }}
             />
         </Stack.Navigator>
     );
