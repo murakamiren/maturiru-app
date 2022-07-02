@@ -22,7 +22,7 @@ const SignUpView: VFC = () => {
             <View style={styles.container}>
                 <View style={styles.formWrap}>
                     <Text style={styles.inputTopText}>名(漢字)</Text>
-                    {errors.firstNameJa && <Text>入力されていません</Text>}
+                    {errors.lastNameJa && <Text>入力されていません</Text>}
                     <Controller
                         control={control}
                         rules={{ required: true }}
