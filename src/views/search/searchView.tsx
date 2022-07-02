@@ -1,3 +1,4 @@
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { VFC } from "react";
 import { Image, StyleSheet, Text, TextInput, View } from "react-native";
 
@@ -5,9 +6,13 @@ import DateIcon from "../../assets/img/date.png";
 import LocationIcon from "../../assets/img/location.png";
 import VarietyIcon from "../../assets/img/variety.png";
 import SearchIcon from "../../assets/svg/searchIcon.svg";
+import Button from "../../components/button/button";
 import { themeColors } from "../../constants/styles";
+import { SearchStackParamList } from "../../types/navigation/navigationType";
 
-const SearchView: VFC = () => {
+type NavigateProps = NativeStackScreenProps<SearchStackParamList, "searchView">;
+
+const SearchView: VFC<NavigateProps> = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.adWrap}></View>
@@ -53,6 +58,13 @@ const SearchView: VFC = () => {
                         />
                     </View>
                 </View>
+                <Button
+                    isMax
+                    text="検索"
+                    color={themeColors.white}
+                    bgColor={themeColors.primaryColor}
+                    fontSize={16}
+                />
             </View>
         </View>
     );
@@ -113,7 +125,8 @@ const styles = StyleSheet.create({
     },
     searchHintBottomWrap: {
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
+        marginBottom: 16
     },
     searchHintTopWrap: {
         flexDirection: "row",
