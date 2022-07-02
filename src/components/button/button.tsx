@@ -11,6 +11,8 @@ import { ButtonPropsType } from "../../types/componentsProps/buttonPropsType";
 
 const Button: VFC<ButtonPropsType> = ({
     text,
+    fontSize,
+    fontWeight,
     onPress,
     bgColor,
     color,
@@ -18,7 +20,9 @@ const Button: VFC<ButtonPropsType> = ({
     isBgTransparent,
     isBorder,
     borderColor,
-    isMax
+    isMax,
+    noRadius,
+    customPaddingVertical
 }) => {
     const handleBgColor = (): ColorValue => {
         if (isBgTransparent) {
@@ -30,23 +34,45 @@ const Button: VFC<ButtonPropsType> = ({
         return "tomato";
     };
 
+    const handleBorderRadius = (): number => {
+        if (isRound) {
+            return 9999;
+        }
+        if (noRadius) {
+            return 0;
+        }
+        return 8;
+    };
+
+    const handlePaddingVertical = (): number => {
+        if (customPaddingVertical) {
+            return customPaddingVertical;
+        }
+        if (isMax) {
+            return 16;
+        }
+        return 8;
+    };
+
     const styles = StyleSheet.create({
         container: {
             alignSelf: "flex-start",
             width: isMax ? "100%" : "auto"
         },
         button: {
-            paddingVertical: isMax ? 16 : 8,
+            paddingVertical: handlePaddingVertical(),
             paddingHorizontal: 12,
             backgroundColor: handleBgColor(),
-            borderRadius: isRound ? 9999 : 8,
+            borderRadius: handleBorderRadius(),
             borderColor: borderColor,
             borderStyle: "solid",
             borderWidth: isBorder ? 1 : 0,
             alignItems: "center"
         },
         text: {
-            color
+            color,
+            fontSize: fontSize ? fontSize : 14,
+            fontWeight: fontWeight ? fontWeight : "normal"
         }
     });
 
