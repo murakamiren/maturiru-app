@@ -1,7 +1,9 @@
 import { VFC } from "react";
 import { Image, StyleSheet, Text, TextInput, View } from "react-native";
 
+import DateIcon from "../../assets/img/date.png";
 import LocationIcon from "../../assets/img/location.png";
+import VarietyIcon from "../../assets/img/variety.png";
 import SearchIcon from "../../assets/svg/searchIcon.svg";
 import { themeColors } from "../../constants/styles";
 
@@ -19,10 +21,38 @@ const SearchView: VFC = () => {
             <Text style={styles.reqText}>条件を指定して探す</Text>
             <View style={styles.reqWrap}>
                 <View style={styles.locationWrap}>
-                    <Image source={LocationIcon} style={styles.locationIcon} />
-                    <Text style={styles.locationText}>エリア・現在地</Text>
+                    <Image source={LocationIcon} style={styles.iconStyle} />
+                    <Text style={styles.searchHintText}>エリア・現在地</Text>
                 </View>
-                <TextInput style={styles.searchInput} autoCapitalize="none" />
+                <TextInput
+                    style={[styles.searchInput, { marginBottom: 16 }]}
+                    autoCapitalize="none"
+                />
+                <View style={styles.searchHintBottomWrap}>
+                    <View style={styles.searchHintWrap}>
+                        <View style={styles.searchHintTopWrap}>
+                            <Image source={DateIcon} style={styles.iconStyle} />
+                            <Text style={styles.searchHintText}>日時</Text>
+                        </View>
+                        <TextInput
+                            style={[styles.searchInput, { marginRight: 4 }]}
+                            autoCapitalize="none"
+                        />
+                    </View>
+                    <View style={styles.searchHintWrap}>
+                        <View style={styles.searchHintTopWrap}>
+                            <Image
+                                source={VarietyIcon}
+                                style={styles.iconStyle}
+                            />
+                            <Text style={styles.searchHintText}>出店種類</Text>
+                        </View>
+                        <TextInput
+                            style={[styles.searchInput, { marginLeft: 4 }]}
+                            autoCapitalize="none"
+                        />
+                    </View>
+                </View>
             </View>
         </View>
     );
@@ -68,14 +98,27 @@ const styles = StyleSheet.create({
         alignItems: "center",
         marginBottom: 8
     },
-    locationIcon: {
+    iconStyle: {
         width: 20,
         height: 20,
         marginRight: 8
     },
-    locationText: {
+    searchHintText: {
         color: themeColors.gray,
         fontSize: 12
+    },
+    searchHintWrap: {
+        justifyContent: "center",
+        flex: 1
+    },
+    searchHintBottomWrap: {
+        flexDirection: "row",
+        alignItems: "center"
+    },
+    searchHintTopWrap: {
+        flexDirection: "row",
+        alignItems: "center",
+        marginBottom: 8
     }
 });
 
