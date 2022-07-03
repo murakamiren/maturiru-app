@@ -65,6 +65,9 @@ const SearchView: VFC<NavigateProps> = ({ navigation }) => {
                     bgColor={themeColors.primaryColor}
                     fontSize={16}
                 />
+                <View>
+                    <Text>最近の検索</Text>
+                </View>
             </View>
         </View>
     );
