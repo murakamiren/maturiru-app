@@ -6,7 +6,7 @@ import { LastSearchCardProps } from "../../types/componentsProps/lastSearchCardP
 const LastSearchCard: VFC<LastSearchCardProps> = ({ name, location, src }) => {
     return (
         <View>
-            <Text>aaaa</Text>
+            <Text>aaa</Text>
         </View>
     );
 };
