@@ -41,7 +41,7 @@ const ChatCard: VFC<chatCardProps> = ({
         },
         light: {
             fontSize: 10,
-            color: themeColors.lightGray
+            color: themeColors.gray
         }
     });
 
