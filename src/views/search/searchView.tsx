@@ -1,12 +1,20 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { VFC } from "react";
-import { Image, StyleSheet, Text, TextInput, View } from "react-native";
+import {
+    Image,
+    ScrollView,
+    StyleSheet,
+    Text,
+    TextInput,
+    View
+} from "react-native";
 
 import DateIcon from "../../assets/img/date.png";
 import LocationIcon from "../../assets/img/location.png";
 import VarietyIcon from "../../assets/img/variety.png";
 import SearchIcon from "../../assets/svg/searchIcon.svg";
 import Button from "../../components/button/button";
+import LastSearchCard from "../../components/lastSearchCard/lastSearchCard";
 import { themeColors } from "../../constants/styles";
 import { SearchStackParamList } from "../../types/navigation/navigationType";
 
@@ -65,9 +73,14 @@ const SearchView: VFC<NavigateProps> = ({ navigation }) => {
                     bgColor={themeColors.primaryColor}
                     fontSize={16}
                 />
-                <View>
-                    <Text>最近の検索</Text>
-                </View>
+                <Text style={styles.lastSearchText}>最近の検索</Text>
+                <ScrollView horizontal={true}>
+                    <LastSearchCard
+                        name="びわこ"
+                        location="滋賀県大津市"
+                        src=""
+                    />
+                </ScrollView>
             </View>
         </View>
     );
@@ -135,6 +148,10 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         marginBottom: 8
+    },
+    lastSearchText: {
+        marginTop: 48,
+        marginBottom: 12
     }
 });
 
