@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
     },
     name: {
         fontSize: 12,
-        color: themeColors.black
+        color: themeColors.black,
+        fontWeight: "bold"
     },
     location: {
         fontSize: 8,
