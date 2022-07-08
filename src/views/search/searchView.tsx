@@ -72,6 +72,7 @@ const SearchView: VFC<NavigateProps> = ({ navigation }) => {
                     color={themeColors.white}
                     bgColor={themeColors.primaryColor}
                     fontSize={16}
+                    onPress={() => navigation.navigate("searchResultView")}
                 />
                 <Text style={styles.lastSearchText}>最近の検索</Text>
                 <ScrollView horizontal={true}>
