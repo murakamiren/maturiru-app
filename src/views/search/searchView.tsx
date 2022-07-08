@@ -80,6 +80,16 @@ const SearchView: VFC<NavigateProps> = ({ navigation }) => {
                         location="滋賀県大津市"
                         src=""
                     />
+                    <LastSearchCard
+                        name="びわこ"
+                        location="滋賀県大津市"
+                        src=""
+                    />
+                    <LastSearchCard
+                        name="びわこ"
+                        location="滋賀県大津市"
+                        src=""
+                    />
                 </ScrollView>
             </View>
         </View>
