@@ -74,25 +74,13 @@ const SearchView: VFC<NavigateProps> = ({ navigation }) => {
                     fontSize={16}
                     onPress={() => navigation.navigate("searchResultView")}
                 />
-                <Text style={styles.lastSearchText}>最近の検索</Text>
-                <ScrollView horizontal={true}>
-                    <LastSearchCard
-                        name="びわこ"
-                        location="滋賀県大津市"
-                        src=""
-                    />
-                    <LastSearchCard
-                        name="びわこ"
-                        location="滋賀県大津市"
-                        src=""
-                    />
-                    <LastSearchCard
-                        name="びわこ"
-                        location="滋賀県大津市"
-                        src=""
-                    />
-                </ScrollView>
             </View>
+            <Text style={styles.lastSearchText}>最近の検索</Text>
+            <ScrollView horizontal={true}>
+                <LastSearchCard name="びわこ" location="滋賀県大津市" src="" />
+                <LastSearchCard name="びわこ" location="滋賀県大津市" src="" />
+                <LastSearchCard name="びわこ" location="滋賀県大津市" src="" />
+            </ScrollView>
         </View>
     );
 };
