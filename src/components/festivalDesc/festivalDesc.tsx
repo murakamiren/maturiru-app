@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         marginBottom: 8
     },
     reviewWrap: {
-        backgroundColor: themeColors.gray,
+        backgroundColor: themeColors.lightGray,
         paddingHorizontal: 16,
         paddingVertical: 24
     }
