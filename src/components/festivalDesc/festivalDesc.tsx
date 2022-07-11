@@ -4,6 +4,7 @@ import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import StarIcon from "../../assets/svg/starIcon.svg";
 import { themeColors } from "../../constants/styles";
 import { FestivalDescProps } from "../../types/componentsProps/festivalDescPropsType";
+import { countToArray } from "../../utils/countToArray";
 
 const FestivalDesc: VFC<FestivalDescProps> = ({
     imgSrc,
@@ -17,9 +18,9 @@ const FestivalDesc: VFC<FestivalDescProps> = ({
             <ScrollView style={styles.titleWrap}>
                 <Text style={styles.titleText}>{title}</Text>
                 <Text style={styles.romeTitleText}>{romeTitle}</Text>
-                {starCount.map((s) => (
+                {countToArray(starCount).map((s, i) => (
                     <StarIcon
-                        key={s}
+                        key={i}
                         style={{ width: 12, height: 12 }}
                         fill={themeColors.starColor}
                     />

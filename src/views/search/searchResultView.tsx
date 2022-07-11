@@ -28,7 +28,7 @@ const SearchResultView: VFC<navigationProps> = ({ navigation }) => {
                             imgSrc: "https://placehold.jp/3d4070/ffffff/300x150.png",
                             title: "テスト",
                             romeTitle: "tesuto",
-                            starCount: [1, 2, 3, 4]
+                            starCount: 4
                         })
                     }
                 />
