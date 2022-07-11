@@ -13,19 +13,24 @@ const FestivalDesc: VFC<FestivalDescProps> = ({
     starCount
 }) => {
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, backgroundColor: themeColors.white }}>
             <Image source={{ uri: imgSrc }} style={styles.img} />
-            <ScrollView style={styles.titleWrap}>
-                <Text style={styles.titleText}>{title}</Text>
-                <Text style={styles.romeTitleText}>{romeTitle}</Text>
-                <View style={styles.starWrap}>
-                    {countToArray(starCount).map((s, i) => (
-                        <StarIcon
-                            key={i}
-                            style={{ width: 12, height: 12 }}
-                            fill={themeColors.starColor}
-                        />
-                    ))}
+            <ScrollView>
+                <View style={styles.titleWrap}>
+                    <Text style={styles.titleText}>{title}</Text>
+                    <Text style={styles.romeTitleText}>{romeTitle}</Text>
+                    <View style={styles.starWrap}>
+                        {countToArray(starCount).map((s, i) => (
+                            <StarIcon
+                                key={i}
+                                style={{ width: 12, height: 12 }}
+                                fill={themeColors.starColor}
+                            />
+                        ))}
+                    </View>
+                </View>
+                <View style={styles.reviewWrap}>
+                    <Text>aaa</Text>
                 </View>
             </ScrollView>
         </View>
@@ -53,7 +58,13 @@ const styles = StyleSheet.create({
         marginBottom: 8
     },
     starWrap: {
-        flexDirection: "row"
+        flexDirection: "row",
+        marginBottom: 8
+    },
+    reviewWrap: {
+        backgroundColor: themeColors.gray,
+        paddingHorizontal: 16,
+        paddingVertical: 24
     }
 });
 
