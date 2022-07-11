@@ -35,7 +35,10 @@ const SearchView: VFC<NavigateProps> = ({ navigation }) => {
                 />
             </View>
             <Text style={styles.lastSearchText}>最近の検索</Text>
-            <ScrollView horizontal={true}>
+            <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+            >
                 <LastSearchCard name="びわこ" location="滋賀県大津市" src="" />
                 <LastSearchCard name="びわこ" location="滋賀県大津市" src="" />
                 <LastSearchCard name="びわこ" location="滋賀県大津市" src="" />
