@@ -1,10 +1,12 @@
 import { VFC } from "react";
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 
+import ChatIcon from "../../assets/svg/chatIcon.svg";
 import StarIcon from "../../assets/svg/starIcon.svg";
 import { themeColors } from "../../constants/styles";
 import { FestivalDescProps } from "../../types/componentsProps/festivalDescPropsType";
 import { countToArray } from "../../utils/countToArray";
+import FestivalReviewCard from "../festivalReviewCard/festivalReviewCard";
 
 const FestivalDesc: VFC<FestivalDescProps> = ({
     imgSrc,
@@ -30,7 +32,27 @@ const FestivalDesc: VFC<FestivalDescProps> = ({
                     </View>
                 </View>
                 <View style={styles.reviewWrap}>
-                    <Text>aaa</Text>
+                    <View
+                        style={{
+                            flexDirection: "row",
+                            alignItems: "center",
+                            marginBottom: 12
+                        }}
+                    >
+                        <ChatIcon
+                            fill={themeColors.black}
+                            style={{ width: 12, height: 12, marginRight: 8 }}
+                        />
+                        <Text style={styles.reviewTitle}>みんなの口コミ</Text>
+                    </View>
+                    <ScrollView
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                    >
+                        <FestivalReviewCard />
+                        <FestivalReviewCard />
+                        <FestivalReviewCard />
+                    </ScrollView>
                 </View>
             </ScrollView>
         </View>
@@ -65,6 +87,9 @@ const styles = StyleSheet.create({
         backgroundColor: themeColors.lightGray,
         paddingHorizontal: 16,
         paddingVertical: 24
+    },
+    reviewTitle: {
+        fontSize: 12
     }
 });
 

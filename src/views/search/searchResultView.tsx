@@ -46,7 +46,8 @@ const SearchResultView: VFC<navigationProps> = ({ navigation }) => {
 const styles = StyleSheet.create({
     reqWrap: {
         marginTop: 32,
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
+        zIndex: 100
     }
 });
 
