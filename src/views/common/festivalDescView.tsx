@@ -22,6 +22,7 @@ const FestivalDescView: VFC<FestivalDescNavigationProps> = ({ route }) => {
                 imgSrc={params.imgSrc}
                 title={params.title}
                 romeTitle={params.romeTitle}
+                starCount={params.starCount}
             />
         </View>
     );

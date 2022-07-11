@@ -27,7 +27,8 @@ const SearchResultView: VFC<navigationProps> = ({ navigation }) => {
                         navigation.navigate("festivalDescView", {
                             imgSrc: "https://placehold.jp/3d4070/ffffff/300x150.png",
                             title: "テスト",
-                            romeTitle: "tesuto"
+                            romeTitle: "tesuto",
+                            starCount: [1, 2, 3, 4]
                         })
                     }
                 />
