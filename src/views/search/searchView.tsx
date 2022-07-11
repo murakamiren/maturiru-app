@@ -1,20 +1,11 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { VFC } from "react";
-import {
-    Image,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    View
-} from "react-native";
+import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 
-import DateIcon from "../../assets/img/date.png";
-import LocationIcon from "../../assets/img/location.png";
-import VarietyIcon from "../../assets/img/variety.png";
 import SearchIcon from "../../assets/svg/searchIcon.svg";
 import Button from "../../components/button/button";
 import LastSearchCard from "../../components/lastSearchCard/lastSearchCard";
+import SearchGroup from "../../components/searchGroup/searchGroup";
 import { themeColors } from "../../constants/styles";
 import { SearchStackParamList } from "../../types/navigation/navigationType";
 
@@ -33,39 +24,7 @@ const SearchView: VFC<NavigateProps> = ({ navigation }) => {
             </View>
             <Text style={styles.reqText}>条件を指定して探す</Text>
             <View style={styles.reqWrap}>
-                <View style={styles.locationWrap}>
-                    <Image source={LocationIcon} style={styles.iconStyle} />
-                    <Text style={styles.searchHintText}>エリア・現在地</Text>
-                </View>
-                <TextInput
-                    style={[styles.searchInput, { marginBottom: 16 }]}
-                    autoCapitalize="none"
-                />
-                <View style={styles.searchHintBottomWrap}>
-                    <View style={styles.searchHintWrap}>
-                        <View style={styles.searchHintTopWrap}>
-                            <Image source={DateIcon} style={styles.iconStyle} />
-                            <Text style={styles.searchHintText}>日時</Text>
-                        </View>
-                        <TextInput
-                            style={[styles.searchInput, { marginRight: 4 }]}
-                            autoCapitalize="none"
-                        />
-                    </View>
-                    <View style={styles.searchHintWrap}>
-                        <View style={styles.searchHintTopWrap}>
-                            <Image
-                                source={VarietyIcon}
-                                style={styles.iconStyle}
-                            />
-                            <Text style={styles.searchHintText}>出店種類</Text>
-                        </View>
-                        <TextInput
-                            style={[styles.searchInput, { marginLeft: 4 }]}
-                            autoCapitalize="none"
-                        />
-                    </View>
-                </View>
+                <SearchGroup />
                 <Button
                     isMax
                     text="検索"
@@ -119,34 +78,6 @@ const styles = StyleSheet.create({
     },
     reqWrap: {
         paddingHorizontal: 20
-    },
-    locationWrap: {
-        flexDirection: "row",
-        alignItems: "center",
-        marginBottom: 8
-    },
-    iconStyle: {
-        width: 20,
-        height: 20,
-        marginRight: 8
-    },
-    searchHintText: {
-        color: themeColors.gray,
-        fontSize: 12
-    },
-    searchHintWrap: {
-        justifyContent: "center",
-        flex: 1
-    },
-    searchHintBottomWrap: {
-        flexDirection: "row",
-        alignItems: "center",
-        marginBottom: 16
-    },
-    searchHintTopWrap: {
-        flexDirection: "row",
-        alignItems: "center",
-        marginBottom: 8
     },
     lastSearchText: {
         marginTop: 48,
