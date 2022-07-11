@@ -1,6 +1,6 @@
-import { AreaItemsType } from "../types/form/searchFormType";
+import { DropDownItemType } from "../types/form/searchFormType";
 
-export const areas: AreaItemsType[] = [
+export const areas: DropDownItemType[] = [
     { label: "北海道", value: "北海道" },
     { label: "青森県", value: "青森県" },
     { label: "岩手県", value: "岩手県" },
@@ -48,4 +48,9 @@ export const areas: AreaItemsType[] = [
     { label: "宮城県", value: "宮崎県" },
     { label: "鹿児島県", value: "鹿児島県" },
     { label: "沖縄県", value: "沖縄県" }
+];
+
+export const variety: DropDownItemType[] = [
+    { label: "テスト", value: "テスト" },
+    { label: "アイウエオ", value: "アイウエオ" }
 ];

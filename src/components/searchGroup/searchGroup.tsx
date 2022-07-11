@@ -5,14 +5,19 @@ import DropDownPicker from "react-native-dropdown-picker";
 import DateIcon from "../../assets/img/date.png";
 import LocationIcon from "../../assets/img/location.png";
 import VarietyIcon from "../../assets/img/variety.png";
-import { areas } from "../../constants/form";
+import { areas, variety } from "../../constants/form";
 import { themeColors } from "../../constants/styles";
-import { AreaItemsType } from "../../types/form/searchFormType";
+import { DropDownItemType } from "../../types/form/searchFormType";
 
 const SearchGroup: VFC = () => {
-    const [open, setOpen] = useState(false);
-    const [value, setValue] = useState<string | null>(null);
-    const [areaItems, setAreaItems] = useState<AreaItemsType[]>(areas);
+    const [areaOpen, setAreaOpen] = useState(false);
+    const [areaValue, setAreaValue] = useState<string | null>(null);
+    const [areaItems, setAreaItems] = useState<DropDownItemType[]>(areas);
+
+    const [varietyOpen, setVarietyOpen] = useState(false);
+    const [varietyValue, setVarietyValue] = useState<string | null>(null);
+    const [varietyItems, setVarietyItems] =
+        useState<DropDownItemType[]>(variety);
 
     return (
         <>
@@ -22,16 +27,20 @@ const SearchGroup: VFC = () => {
             </View>
             <View style={{ marginBottom: 8, zIndex: 100 }}>
                 <DropDownPicker
-                    open={open}
-                    value={value}
+                    open={areaOpen}
+                    value={areaValue}
                     items={areaItems}
-                    setOpen={setOpen}
-                    setValue={setValue}
+                    setOpen={setAreaOpen}
+                    setValue={setAreaValue}
                     setItems={setAreaItems}
                     style={styles.searchDropDown}
                     placeholder="場所を選択してください"
                     placeholderStyle={{ color: themeColors.gray }}
                     dropDownContainerStyle={styles.searchDropDownContainer}
+                    itemSeparator={true}
+                    itemSeparatorStyle={{
+                        backgroundColor: themeColors.gray
+                    }}
                 />
             </View>
             <View style={styles.searchHintBottomWrap}>
@@ -50,10 +59,27 @@ const SearchGroup: VFC = () => {
                         <Image source={VarietyIcon} style={styles.iconStyle} />
                         <Text style={styles.searchHintText}>出店種類</Text>
                     </View>
-                    <TextInput
-                        style={[styles.searchInput, { marginLeft: 4 }]}
-                        autoCapitalize="none"
-                    />
+                    <View>
+                        <DropDownPicker
+                            open={varietyOpen}
+                            value={varietyValue}
+                            items={varietyItems}
+                            setOpen={setVarietyOpen}
+                            setValue={setVarietyValue}
+                            setItems={setVarietyItems}
+                            style={styles.searchDropDown}
+                            placeholder="種類"
+                            zIndex={100}
+                            placeholderStyle={{ color: themeColors.gray }}
+                            dropDownContainerStyle={
+                                styles.searchDropDownContainer
+                            }
+                            itemSeparator={true}
+                            itemSeparatorStyle={{
+                                backgroundColor: themeColors.gray
+                            }}
+                        />
+                    </View>
                 </View>
             </View>
         </>
@@ -84,7 +110,6 @@ const styles = StyleSheet.create({
     },
     searchDropDown: {
         backgroundColor: themeColors.lightGray,
-        paddingVertical: 12,
         borderRadius: 8,
         borderWidth: 0
     },
@@ -102,7 +127,8 @@ const styles = StyleSheet.create({
     searchHintBottomWrap: {
         flexDirection: "row",
         alignItems: "center",
-        marginBottom: 16
+        marginBottom: 16,
+        zIndex: 90
     },
     searchHintText: {
         color: themeColors.gray,

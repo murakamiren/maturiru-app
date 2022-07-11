@@ -1,4 +1,4 @@
-export type AreaItemsType = {
+export type DropDownItemType = {
     label: string;
     value: string;
 };
