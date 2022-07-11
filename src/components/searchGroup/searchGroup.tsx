@@ -19,6 +19,8 @@ const SearchGroup: VFC = () => {
             <View style={styles.locationWrap}>
                 <Image source={LocationIcon} style={styles.iconStyle} />
                 <Text style={styles.searchHintText}>エリア・現在地</Text>
+            </View>
+            <View style={{ marginBottom: 8, zIndex: 100 }}>
                 <DropDownPicker
                     open={open}
                     value={value}
@@ -26,6 +28,10 @@ const SearchGroup: VFC = () => {
                     setOpen={setOpen}
                     setValue={setValue}
                     setItems={setAreaItems}
+                    style={styles.searchDropDown}
+                    placeholder="場所を選択してください"
+                    placeholderStyle={{ color: themeColors.gray }}
+                    dropDownContainerStyle={styles.searchDropDownContainer}
                 />
             </View>
             <View style={styles.searchHintBottomWrap}>
@@ -75,6 +81,18 @@ const styles = StyleSheet.create({
         paddingVertical: 12,
         paddingLeft: 48,
         borderRadius: 8
+    },
+    searchDropDown: {
+        backgroundColor: themeColors.lightGray,
+        paddingVertical: 12,
+        borderRadius: 8,
+        borderWidth: 0
+    },
+    searchDropDownContainer: {
+        borderWidth: 0,
+        backgroundColor: themeColors.lightGray,
+        borderBottomRightRadius: 8,
+        borderBottomLeftRadius: 8
     },
     searchHintTopWrap: {
         flexDirection: "row",
