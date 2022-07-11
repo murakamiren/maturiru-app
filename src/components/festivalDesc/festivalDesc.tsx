@@ -18,13 +18,15 @@ const FestivalDesc: VFC<FestivalDescProps> = ({
             <ScrollView style={styles.titleWrap}>
                 <Text style={styles.titleText}>{title}</Text>
                 <Text style={styles.romeTitleText}>{romeTitle}</Text>
-                {countToArray(starCount).map((s, i) => (
-                    <StarIcon
-                        key={i}
-                        style={{ width: 12, height: 12 }}
-                        fill={themeColors.starColor}
-                    />
-                ))}
+                <View style={styles.starWrap}>
+                    {countToArray(starCount).map((s, i) => (
+                        <StarIcon
+                            key={i}
+                            style={{ width: 12, height: 12 }}
+                            fill={themeColors.starColor}
+                        />
+                    ))}
+                </View>
             </ScrollView>
         </View>
     );
@@ -36,16 +38,22 @@ const styles = StyleSheet.create({
         height: 280
     },
     titleWrap: {
-        paddingHorizontal: 16
+        paddingHorizontal: 16,
+        paddingTop: 16
     },
     titleText: {
         fontSize: 16,
         fontWeight: "bold",
-        color: themeColors.black
+        color: themeColors.black,
+        marginBottom: 4
     },
     romeTitleText: {
         fontSize: 12,
-        color: themeColors.gray
+        color: themeColors.gray,
+        marginBottom: 8
+    },
+    starWrap: {
+        flexDirection: "row"
     }
 });
 

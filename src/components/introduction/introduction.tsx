@@ -7,9 +7,10 @@ import StarIcon from "../../assets/svg/starIcon.svg";
 import Avatar from "../../components/avatar/avatar";
 import Button from "../../components/button/button";
 import { themeColors } from "../../constants/styles";
+import { countToArray } from "../../utils/countToArray";
 import IntroductionTtl from "../introductionTtl/introductionTtl";
 
-const starCount: number[] = [1, 2, 3, 4, 5];
+const starCount = 4;
 
 type myPageProps = {
     name: string;
@@ -58,7 +59,7 @@ const Introduction: VFC<myPageProps> = ({
                 />
             </View>
             <View style={styles.starWrap}>
-                {starCount.map((n) => (
+                {countToArray(starCount).map((n) => (
                     <StarIcon
                         key={n}
                         fill={themeColors.starColor}
