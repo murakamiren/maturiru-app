@@ -3,6 +3,7 @@ import { VFC } from "react";
 
 import { themeColors } from "../../constants/styles";
 import { SearchStackParamList } from "../../types/navigation/navigationType";
+import FestivalDescView from "../common/festivalDescView";
 import SearchResultView from "./searchResultView";
 import SearchView from "./searchView";
 
@@ -26,6 +27,11 @@ const SearchStack: VFC<SearchStackParamList> = () => {
             <Stack.Screen
                 name="searchResultView"
                 component={SearchResultView}
+                options={{ title: "" }}
+            />
+            <Stack.Screen
+                name="festivalDescView"
+                component={FestivalDescView}
                 options={{ title: "" }}
             />
         </Stack.Navigator>
