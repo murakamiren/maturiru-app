@@ -18,6 +18,7 @@ export type MyPageStackParamList = {
 
 export type HomeStackParamList = {
     homeView: undefined;
+    festivalDescView: { imgSrc: string };
 };
 
 export type TimelineStackParamList = {
@@ -27,7 +28,7 @@ export type TimelineStackParamList = {
 export type SearchStackParamList = {
     searchView: undefined;
     searchResultView: undefined;
-    festivalDescView: undefined;
+    festivalDescView: { imgSrc: string };
 };
 
 export type LoginStackParamList = {

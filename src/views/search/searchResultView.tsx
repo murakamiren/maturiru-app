@@ -23,7 +23,11 @@ const SearchResultView: VFC<navigationProps> = ({ navigation }) => {
                     festivalRome="tesuto"
                     festivalImgUri="https://placehold.jp/3d4070/ffffff/300x150.png"
                     space={1}
-                    onPress={() => navigation.navigate("festivalDescView")}
+                    onPress={() =>
+                        navigation.navigate("festivalDescView", {
+                            imgSrc: "https://placehold.jp/3d4070/ffffff/300x150.png"
+                        })
+                    }
                 />
                 <FestivalCard
                     festivalName="テスト"
