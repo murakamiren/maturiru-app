@@ -1,3 +1,5 @@
+import { FestivalDescProps } from "../componentsProps/festivalDescPropsType";
+
 export type RootTabParamList = {
     search: undefined;
     timeline: undefined;
@@ -18,7 +20,7 @@ export type MyPageStackParamList = {
 
 export type HomeStackParamList = {
     homeView: undefined;
-    festivalDescView: { imgSrc: string };
+    festivalDescView: FestivalDescProps;
 };
 
 export type TimelineStackParamList = {
@@ -28,7 +30,7 @@ export type TimelineStackParamList = {
 export type SearchStackParamList = {
     searchView: undefined;
     searchResultView: undefined;
-    festivalDescView: { imgSrc: string };
+    festivalDescView: FestivalDescProps;
 };
 
 export type LoginStackParamList = {

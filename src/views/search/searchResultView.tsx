@@ -25,7 +25,9 @@ const SearchResultView: VFC<navigationProps> = ({ navigation }) => {
                     space={1}
                     onPress={() =>
                         navigation.navigate("festivalDescView", {
-                            imgSrc: "https://placehold.jp/3d4070/ffffff/300x150.png"
+                            imgSrc: "https://placehold.jp/3d4070/ffffff/300x150.png",
+                            title: "テスト",
+                            romeTitle: "tesuto"
                         })
                     }
                 />

@@ -15,9 +15,14 @@ type FestivalDescNavigationProps = CompositeScreenProps<
 >;
 
 const FestivalDescView: VFC<FestivalDescNavigationProps> = ({ route }) => {
+    const params = route.params;
     return (
         <View style={{ flex: 1 }}>
-            <FestivalDesc imgSrc={route.params.imgSrc} />
+            <FestivalDesc
+                imgSrc={params.imgSrc}
+                title={params.title}
+                romeTitle={params.romeTitle}
+            />
         </View>
     );
 };
